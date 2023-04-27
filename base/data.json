@@ -1,0 +1,9 @@
+{
+    "name": "jmeno",
+    "surname": "prijmeni",
+    "phone": "31312313133",
+    "email": "jmenoprijmeni@mailffww.com",
+    "password": "Tester001",
+    "herokuName": "tomsmith",
+    "herokuPswd": "SuperSecretPassword!"
+}
