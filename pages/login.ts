@@ -5,9 +5,6 @@ export default class LoginPage{
     constructor(public page: Page) {
         this.page = page;
 
-        // this.username_textbox = page.getByLabel('Username');
-        // const pswrd_textbox = page.getByLabel('Password');
-        // const login_button = page.locator('//button[@type="submit"]');
     }
 
     //Locators
