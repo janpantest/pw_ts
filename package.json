@@ -5,6 +5,7 @@
   "main": "index.js",
   "scripts": {
     "runBrowser":"npx playwright test --project=chromium --headed",
+    "singleRun": "npx playwright test --project=chromium --headed  --workers=1",
     "runReport": "npx playwright show-report"
   },
   "keywords": [],
