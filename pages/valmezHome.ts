@@ -22,14 +22,15 @@ export default class ValmezHome{
     }
 
     async checkIfExists() {
-        const buttonExist = await this.page.locator('#vismo-cookies-refuse-button').isVisible({ timeout: 20000});
-        console.info('button exists : ' + buttonExist);
-        return buttonExist;
+        // const buttonExist = await this.page.locator('#vismo-cookies-refuse-button').isVisible({ timeout: 20000});
+        // console.info('button exists : ' + buttonExist);
+        // return buttonExist;
+        return await this.page.locator('#vismo-cookies-refuse-button').isVisible({ timeout: 20000});
     }
 
     async clickIfExists() {
-        console.info('llll : ' + await this.checkIfExists())
-        if (await this.checkIfExists) {
+        console.info(await this.checkIfExists())
+        if (await this.checkIfExists()) {
             await this.page.locator('//a[@id="vismo-cookies-refuse-button"]').click()
         }
     }
