@@ -1,16 +1,26 @@
 
 import { expect, test } from "@playwright/test";
-import * as data from "../base/data.json"
-import EcomLoginPage from '../pages/ecomLogin'
-import EcomSuccessLogin from  '../pages/ecomSuccessLogin'
+import * as data from "../base/data.json";
+import ValmezMestoUrad from "../pages/valmezMestoUrad";
+import ValmezVedeniMesta from "../pages/valmezVedeni";
+import ValmezHome from "../pages/valmezHome";
+
 
 test('register', async ({ page }) => {
 
-  const ecomLogin = new EcomLoginPage(page);
-  const ecomSuccess = new EcomSuccessLogin(page);
+  const valmezHome = new ValmezHome(page);
+  const valmezMestoUrad = new ValmezMestoUrad(page);
+  const valmezVedeniMesta = new ValmezVedeniMesta(page);
 
-  await ecomLogin.goTo();
-  await ecomLogin.login(data.eName , data.eSurname, data.eEmail, data.ePhone, data.ePassword, data.ePassword);
-  await ecomSuccess.checkRegister();
+  await valmezHome.goTo();
+  // await valmezHome.checkIfExists()
+  await valmezHome.clickIfExists()
+  await valmezHome.clickMestoUrad();
+  await valmezMestoUrad.clickVedeni();
+  // await valmezVedeniMesta.getText();
+  // const vedeni = await valmezVedeniMesta.getText();
+  // console.log(vedeni)
+  console.log(await valmezVedeniMesta.getText())
+
 
   });
